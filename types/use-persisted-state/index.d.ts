@@ -3,9 +3,9 @@
 // Definitions by: Karol Majewski <https://github.com/karol-majewski>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.8
-import { useState } from 'react';
+import { Dispatch } from 'react';
 
-declare function createPersistedState(key: string, provider?: Pick<Storage, 'getItem' | 'setItem'>): typeof useState;
+declare function createPersistedState<T>(key: string, provider?: Pick<Storage, 'getItem' | 'setItem'>): [T, Dispatch<T>];
 
 export as namespace createPersistedState;
 export default createPersistedState;
